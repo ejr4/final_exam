@@ -16,7 +16,7 @@ class AuctionsController < ApplicationController
         
         auctions = Auction.order(created_at: :desc)
         render json: auctions
-        # deleted serializer line here
+        
     end
 
     def create
