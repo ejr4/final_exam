@@ -2083,3 +2083,35 @@ Processing by AuctionsController#index as JSON
 Completed 200 OK in 73ms (Views: 66.0ms | ActiveRecord: 10.5ms)
 
 
+Started GET "/auctions" for 127.0.0.1 at 2018-06-25 19:42:31 -0700
+Processing by AuctionsController#index as JSON
+  Parameters: {"auction"=>{}}
+  [1m[36mAuction Load (3.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:18
+Completed 200 OK in 86ms (Views: 81.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-06-25 19:44:43 -0700
+Processing by AuctionsController#index as JSON
+  Parameters: {"auction"=>{}}
+  [1m[36mAuction Load (1.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:18
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-06-25 20:02:07 -0700
+Processing by AuctionsController#index as JSON
+  Parameters: {"auction"=>{}}
+  [1m[36mAuction Load (5.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:18
+Completed 200 OK in 59ms (Views: 52.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2018-06-25 20:03:35 -0700
+Processing by AuctionsController#index as JSON
+  Parameters: {"auction"=>{}}
+  [1m[36mAuction Load (1.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:18
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 1.8ms)
+
+

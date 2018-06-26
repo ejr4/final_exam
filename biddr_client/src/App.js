@@ -17,6 +17,7 @@ class App extends Component {
 					<NavBar/>		
 						<Switch>
 							
+							<Route exact path="/" />
 							<Route path="/auctions/:id" component={AuctionShowPage} />
 							<Route exact path="/auctions" component={AuctionIndexPage} />
 						</Switch>
