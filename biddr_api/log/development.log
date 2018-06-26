@@ -1344,3 +1344,387 @@ FOREIGN KEY ("auction_id")
   [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" ORDER BY "auctions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mBid Load (0.8ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" ORDER BY "bids"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" ORDER BY "auctions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/auctions/" for 127.0.0.1 at 2018-06-25 16:51:42 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jon/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuctionsController#index as JSON
+  [1m[36mAuction Load (2.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:11
+Completed 200 OK in 83ms (Views: 63.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/auctions/44" for 127.0.0.1 at 2018-06-25 16:53:58 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"44"}
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:4
+Completed 200 OK in 57ms (Views: 1.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/auctions/44/bids" for 127.0.0.1 at 2018-06-25 16:54:18 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/auctions/44/bids"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auctions/44/bids/" for 127.0.0.1 at 2018-06-25 16:54:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/auctions/44/bids"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auctions/44/" for 127.0.0.1 at 2018-06-25 17:10:03 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"44"}
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 17.0ms)
+
+
+  
+NameError (uninitialized constant AuctionsController::Bids):
+  
+app/controllers/auctions_controller.rb:8:in `show'
+Started GET "/auctions/44/" for 127.0.0.1 at 2018-06-25 17:11:12 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"44"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (1.1ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 89ms (Views: 1.3ms | ActiveRecord: 16.9ms)
+
+
+  [1m[36mBid Load (0.7ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" ORDER BY "bids"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/auctions/41/" for 127.0.0.1 at 2018-06-25 17:11:36 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"41"}
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (2.0ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/auctions/40/" for 127.0.0.1 at 2018-06-25 17:11:40 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"40"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.6ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auctions/42/" for 127.0.0.1 at 2018-06-25 17:11:45 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"42"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.6ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auctions/3/" for 127.0.0.1 at 2018-06-25 17:11:52 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.6ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auctions/4/" for 127.0.0.1 at 2018-06-25 17:11:54 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.7ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auctions/5/" for 127.0.0.1 at 2018-06-25 17:11:57 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mAuction Load (2.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (1.4ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/auctions//" for 127.0.0.1 at 2018-06-25 17:11:59 -0700
+Processing by AuctionsController#index as JSON
+  [1m[36mAuction Load (1.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:16
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/auctions/6/" for 127.0.0.1 at 2018-06-25 17:12:00 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.7ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/auctions/7/" for 127.0.0.1 at 2018-06-25 17:12:02 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.4ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auctions/8/" for 127.0.0.1 at 2018-06-25 17:12:04 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (2.7ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/auctions//" for 127.0.0.1 at 2018-06-25 17:12:06 -0700
+Processing by AuctionsController#index as JSON
+  [1m[36mAuction Load (1.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:16
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/auctions/9/" for 127.0.0.1 at 2018-06-25 17:12:07 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.6ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:12:13 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (3.6ms)[0m  [1m[34mSELECT  "bids".* FROM "bids" WHERE "bids"."auction_id" = $1 LIMIT $2[0m  [["auction_id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:8
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:13:06 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.9ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 10]]
+  ↳ app/controllers/auctions_controller.rb:9
+Completed 200 OK in 68ms (Views: 19.3ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:13:30 -0700
+  
+SyntaxError (/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:9: syntax error, unexpected '\n', expecting =>
+...     render json: auction, bids
+...                               ^
+/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/auctions_controller.rb:9: syntax error, unexpected '\n', expecting =>
+app/controllers/auctions_controller.rb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:15:33 -0700
+  
+SyntaxError (/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:9: syntax error, unexpected ',', expecting =>
+        render json: {auction, bids}
+                             ^
+/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/auctions_controller.rb:9: syntax error, unexpected ',', expecting =>
+app/controllers/auctions_controller.rb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:18:24 -0700
+  
+SyntaxError (/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:9: syntax error, unexpected '}'
+... format.json {render :json => }
+...                              ^
+/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:12: syntax error, unexpected keyword_end, expecting '}'
+    end
+    ^~~
+/home/jon/bc/final_exam/biddr_api/app/controllers/auctions_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/auctions_controller.rb:9: syntax error, unexpected '}'
+app/controllers/auctions_controller.rb:12: syntax error, unexpected keyword_end, expecting '}'
+app/controllers/auctions_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:19:17 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 17.6ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/auctions_controller.rb:9:in `format'
+app/controllers/auctions_controller.rb:9:in `show'
+Started GET "/auctions/10/" for 127.0.0.1 at 2018-06-25 17:21:43 -0700
+Processing by AuctionsController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/auctions_controller.rb:7
+  [1m[36mBid Load (0.8ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 10]]
+  ↳ app/controllers/auctions_controller.rb:11
+Completed 200 OK in 67ms (Views: 20.3ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/auctions/" for 127.0.0.1 at 2018-06-25 17:24:37 -0700
+Processing by AuctionsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: auction):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started GET "/auctions/" for 127.0.0.1 at 2018-06-25 17:25:55 -0700
+Processing by AuctionsController#index as JSON
+  [1m[36mAuction Load (1.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."created_at" DESC[0m
+  ↳ app/controllers/auctions_controller.rb:18
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/auctions/?title=%22testTitle%22&details=%22brand%20new%20imaginary%20object%22&r_price=55.33&ending_date=%222018-06-25T21:38:24.898Z%22" for 127.0.0.1 at 2018-06-25 17:29:55 -0700
+Processing by AuctionsController#create as JSON
+  Parameters: {"title"=>"\"testTitle\"", "details"=>"\"brand new imaginary object\"", "r_price"=>"55.33", "ending_date"=>"\"2018-06-25T21:38:24.898Z\""}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: auction):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started POST "/auctions/?auction=%22title%22:%20%22Sunflower-3030%22,%20%20%20%20%20%20%20%20%22details%22:%20%22Dolores!%22,%20%20%20%20%20%20%20%20%22r_price%22:%20%2243.85%22,%20%20%20%20%20%20%20%20%22ending_date%22:%20%222018-10-23T18:00:00.000Z%22" for 127.0.0.1 at 2018-06-25 17:31:19 -0700
+Processing by AuctionsController#create as JSON
+  Parameters: {"auction"=>"\"title\": \"Sunflower-3030\",        \"details\": \"Dolores!\",        \"r_price\": \"43.85\",        \"ending_date\": \"2018-10-23T18:00:00.000Z\""}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for #<String:0xb3ce2224>):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started POST "/auctions/?auction=%22title%22:%20%22Sunflower-3030%22,%20%20%20%20%20%20%20%20%22details%22:%20%22Dolores!%22,%20%20%20%20%20%20%20%20%22r_price%22:%20%2243.85%22,%20%20%20%20%20%20%20%20%22ending_date%22:%20%222018-10-23T18:00:00.000Z%22" for 127.0.0.1 at 2018-06-25 17:32:39 -0700
+Processing by AuctionsController#create as JSON
+  Parameters: {"auction"=>"\"title\": \"Sunflower-3030\",        \"details\": \"Dolores!\",        \"r_price\": \"43.85\",        \"ending_date\": \"2018-10-23T18:00:00.000Z\""}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for #<String:0xb461aa1c>):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started POST "/auctions/?auction=title:%20%22Sunflower-3030%22,%20%20%20%20%20%20%20%20details:%20%22Dolores!%22,%20%20%20%20%20%20%20%20r_price:%2043.85,%20%20%20%20%20%20%20%20ending_date:%20%222018-10-23T18:00%22" for 127.0.0.1 at 2018-06-25 17:43:14 -0700
+Processing by AuctionsController#create as JSON
+  Parameters: {"auction"=>"title: \"Sunflower-3030\",        details: \"Dolores!\",        r_price: 43.85,        ending_date: \"2018-10-23T18:00\""}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for #<String:0x03398ea8>):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started POST "/auctions/?auction=title:%20%22Sunflower-3030%22,%20%20%20%20%20%20%20%20details:%20%22Dolores!%22,%20%20%20%20%20%20%20%20r_price:%2043.85,%20%20%20%20%20%20%20%20ending_date:%20%222018-10-23T18:00%22" for 127.0.0.1 at 2018-06-25 17:47:03 -0700
+Processing by AuctionsController#create as JSON
+  Parameters: {"auction"=>"title: \"Sunflower-3030\",        details: \"Dolores!\",        r_price: 43.85,        ending_date: \"2018-10-23T18:00\""}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for #<String:0x03ed3ae8>):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started POST "/auctions/" for 127.0.0.1 at 2018-06-25 17:48:30 -0700
+Processing by AuctionsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: auction):
+  
+app/controllers/auctions_controller.rb:32:in `auction_params'
+app/controllers/auctions_controller.rb:23:in `create'
+Started POST "/auctions/" for 127.0.0.1 at 2018-06-25 17:49:07 -0700
+Processing by AuctionsController#create as JSON
+  Parameters: {"auction"=>{"title"=>"Sunflower-404", "details"=>"Dolores!", "r_price"=>"43.85", "ending_date"=>"2018-10-23T18:00:00.000Z"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/auctions_controller.rb:25
+  [1m[36mAuction Create (1.5ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "details", "r_price", "ending_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sunflower-404"], ["details", "Dolores!"], ["r_price", "43.85"], ["ending_date", "2018-10-23 18:00:00"], ["created_at", "2018-06-26 00:49:07.124817"], ["updated_at", "2018-06-26 00:49:07.124817"]]
+  ↳ app/controllers/auctions_controller.rb:25
+  [1m[35m (47.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/auctions_controller.rb:25
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 49.5ms)
+
+
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" ORDER BY "auctions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
